@@ -21,7 +21,7 @@ Run this command in your console at the project root level directory:
 
 Build and run the docker container:
 
-<code>sudo docker-compose up -u --build</code>
+<code>sudo docker-compose up --build</code>
 
 To test that the container is serving goto:
 
