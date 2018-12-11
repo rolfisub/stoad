@@ -175,6 +175,27 @@ class Question2 {
     }
     
     /**
+     * gets params and returns a SortInput
+     * @param array $params
+     * @return \Stoad\Models\SortInput
+     */
+    private function getSortInput(array $params) {
+        $sortInput = new SortInput();
+        $last = array_pop($params);
+        if($last == 'asc' || $last == 'desc') {
+            $sortInput->order = $last;
+        } else {
+            //default order
+            $sortInput->order = 'asc';
+            //return param
+            array_push($params, $last);
+        }
+        $sortInput->params = $params;
+        return $sortInput;
+    }
+
+
+    /**
      * sort the array
      * @param array $params
      */
@@ -183,9 +204,10 @@ class Question2 {
         //validate them
         $this->validateParams($params);
         
-        //they are valid
-        $defaultOrder = 'asc';
-        $len = sizeof($params);
+        //gets sortInput entity
+        $sortInput = $this->getSortInput($params);
+        
+        return $sortInput;
         
         
     }
