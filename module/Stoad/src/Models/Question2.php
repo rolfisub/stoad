@@ -139,7 +139,7 @@ class Question2 {
      * Interface to get data
      * @return type array
      */
-    private function getData() {
+    public function getData() {
         return $this->data;
     }
     
@@ -148,14 +148,13 @@ class Question2 {
             if(array_key_exists($key, $data)) {
                 return true;
             } else {            
-                if(is_array($data)) {
-                    foreach($data as $val) {
+                foreach($data as $val) {
+                    if(is_array($val)) {
                         return $this->doesKeyExistRecursive($key, $val);
                     }
                 }
             }
-        }
-        
+        }        
         return false;
     }
     
@@ -166,8 +165,7 @@ class Question2 {
     private function validateParams(array $params) {
         //all params are valid
         foreach ($params as $val) {
-            if($val !== 'asc' || $val !== 'desc') {
-                echo "checking " . $val . "<br />";
+            if($val != 'asc' && $val != 'desc') {
                 $exist = $this->doesKeyExistRecursive($val, $this->getData());
                 if(!$exist) {
                     throw new \Exception("Invalid key " . $val . " in data.");

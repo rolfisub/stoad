@@ -3,6 +3,8 @@
 namespace Stoad\Controllers;
 
 use Stoad\Models\Question2 as Q2Model;
+use Stoad\Controllers\ControllerResponseTrait;
+
 /**
  * Description of Question2
  *
@@ -17,6 +19,11 @@ class Question2 extends \Zend\Mvc\Controller\AbstractRestfulController {
     private $model;
     
     /**
+     * common JSON response code
+     */
+    use ControllerResponseTrait;
+    
+    /**
      * construct controller
      * @param Q2Model $model
      */
@@ -25,43 +32,11 @@ class Question2 extends \Zend\Mvc\Controller\AbstractRestfulController {
     }
     
     /**
-     * send the json response
-     * @param type $data
-     * @return \Zend\View\Model\JsonModel
-     */
-    private function sendJson($data) {
-        //prettyPrint
-        $response = new \Zend\View\Model\JsonModel([
-            "status" => "Ok",
-            "result" => $data
-        ]);
-        $response->setOption('prettyPrint', true);
-        return $response;
-    }
-    
-    /**
-     * 
-     * @param \Exception $message
-     * @param type $code
-     * @return \Zend\View\Model\JsonModel
-     */
-    private function sendError(\Exception $message, $code = 422) {
-        //prettyPrint
-        $response = new \Zend\View\Model\JsonModel([
-            "status" => "Error",
-            "message" => $message->getMessage()
-        ]);
-        $response->setOption('prettyPrint', true);
-        $this->response->setStatusCode($code);
-        return $response;
-    }
-    
-    /**
      * gets the list provided
      * @return type JsonModel
      */
     public function getList() {
-        return $this->sendJson($this->model->data);
+        return $this->sendJson($this->model->getData());
     }
     
     /**
