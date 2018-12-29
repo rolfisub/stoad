@@ -15,8 +15,10 @@ use Stoad\Models\Question2 as Q2Model;
  *
  * @author rolf
  */
-class Q2Factory {
-    public function __invoke(\Interop\Container\ContainerInterface $container, $requestedName, array $options = null) {
+class Q2Factory
+{
+    public function __invoke(\Interop\Container\ContainerInterface $container, $requestedName, array $options = null)
+    {
         $model = new Q2Model();
         $controller = new Question2($model);
         return $controller;

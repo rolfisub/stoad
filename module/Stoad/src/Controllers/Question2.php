@@ -10,44 +10,48 @@ use Stoad\Controllers\ControllerResponseTrait;
  *
  * @author rolf
  */
-class Question2 extends \Zend\Mvc\Controller\AbstractRestfulController {
-    
+class Question2 extends \Zend\Mvc\Controller\AbstractRestfulController
+{
+
     /**
      * holder for the model class
      * @var type Q2Model
      */
     private $model;
-    
+
     /**
      * common JSON response code
      */
     use ControllerResponseTrait;
-    
+
     /**
      * construct controller
      * @param Q2Model $model
      */
-    public function __construct(Q2Model $model) {
+    public function __construct(Q2Model $model)
+    {
         $this->model = $model;
     }
-    
+
     /**
      * gets the list provided
-     * @return type JsonModel
+     * @return string
      */
-    public function getList() {
+    public function getList()
+    {
         return $this->sendJson($this->model->getData());
     }
-    
+
     /**
      * process sort request
      * @param type $params
      * @return type
      */
-    public function get($params) {
+    public function get($params)
+    {
         //yey we can now start parsing params
         $paramArray = explode(',', $params);
-        
+
         try {
             $result = $this->model->sort($paramArray);
             return $this->sendJson($result);
@@ -55,5 +59,5 @@ class Question2 extends \Zend\Mvc\Controller\AbstractRestfulController {
             return $this->sendError($ex);
         }
     }
-    
+
 }

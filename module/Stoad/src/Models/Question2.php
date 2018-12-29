@@ -6,7 +6,10 @@
  * and open the template in the editor.
  */
 
+
 namespace Stoad\Models;
+
+use Stoad\Entity\SortInput;
 
 /**
  * Description of Question2
@@ -206,6 +209,17 @@ class Question2 {
         
         //gets sortInput entity
         $sortInput = $this->getSortInput($params);
+        
+        echo '<pre>';
+        $normal = $this->getData();
+        var_dump($normal[0]);
+        //var_dump(\_\flattenDeep($normal[0]));
+        //var_dump(\_\flatten($normal[0]));
+        var_dump(\_\flattenDepth($normal[0], 2));
+        
+        var_dump($normal[0]);
+        
+        die();
         
         return $sortInput;
         

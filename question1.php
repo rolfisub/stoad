@@ -1,5 +1,7 @@
 <?php
+require_once "vendor/autoload.php";
 
+use Rolfisub\PrintKeyValue\PrintKeyValue;
 /**
  * answer to question 1
  */
@@ -121,32 +123,10 @@ $data = [
     ),
 ];
 
-function spaces($amount) {
-    for($x = 0; $x < $amount; $x++) {
-        echo "  ";
-    }
-}
+$pkv = new PrintKeyValue();
 
-function printLn($text, $level) {
-    echo spaces($level) . $text;
-}
-
-function printKeyValues (array $d, $level = 0) {
-    foreach ($d as $key => $value) {
-        printLn($key . ": ", $level);
-        if(!is_array($value)){
-            echo $value . "\n";
-        } else {
-            echo "{ \n";
-            $level++;
-            printKeyValues($value, $level);
-            $level--;
-            printLn("} \n", $level);
-        }
-    }
-}
-
-printKeyValues($data);
+echo "\n";
+echo $pkv->printKeyValues($data);
 
         
         

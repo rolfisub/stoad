@@ -2,15 +2,18 @@
 /**
  * @author Rolf Bansbach
  */
+
 namespace Stoad\Controllers;
 
-trait ControllerResponseTrait {
+trait ControllerResponseTrait
+{
     /**
      * send the JSON response
-     * @param type $data
+     * @param array $data
      * @return \Zend\View\Model\JsonModel
      */
-    private function sendJson($data) {
+    private function sendJson(array $data)
+    {
         $response = new \Zend\View\Model\JsonModel([
             "status" => "Ok",
             "result" => $data
@@ -18,14 +21,15 @@ trait ControllerResponseTrait {
         $response->setOption('prettyPrint', true);
         return $response;
     }
-    
+
     /**
      * send an standard formatted JSON error
      * @param \Exception $message
-     * @param type $code
+     * @param $code
      * @return \Zend\View\Model\JsonModel
      */
-    private function sendError(\Exception $message, $code = 422) {
+    private function sendError(\Exception $message, $code = 422)
+    {
         $response = new \Zend\View\Model\JsonModel([
             "status" => "Error",
             "message" => $message->getMessage()

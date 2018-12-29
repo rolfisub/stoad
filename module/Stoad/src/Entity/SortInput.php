@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-namespace Stoad\Models;
+namespace Stoad\Entity;
 
 /**
  * Description of SortInput
