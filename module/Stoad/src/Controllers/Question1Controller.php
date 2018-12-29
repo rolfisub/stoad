@@ -2,24 +2,20 @@
 
 namespace Stoad\Controllers;
 use Stoad\Models\Q1Model;
+use Zend\View\Model\ViewModel;
 
 /**
  * Description of Question2
  *
  * @author rolf
  */
-class Question1 extends \Zend\Mvc\Controller\AbstractRestfulController
+class Question1Controller extends \Zend\Mvc\Controller\AbstractActionController
 {
 
     /**
      * @var Q1Model $model
      */
     private $model;
-
-    /**
-     * common JSON response code
-     */
-    use ControllerResponseTrait;
 
     /**
      * construct controller
@@ -34,11 +30,10 @@ class Question1 extends \Zend\Mvc\Controller\AbstractRestfulController
      * gets the list provided
      * @return string
      */
-    public function getList()
+    public function q1Action()
     {
-        return $this->sendJson([
-            "working" => $this->model->getAnswer()
-        ]);
+        $answer = $this->model->getAnswer();
+        return new ViewModel(["answer"=>$answer]);
     }
 
 

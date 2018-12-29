@@ -8,7 +8,7 @@
 
 namespace Stoad\Factory;
 
-use Stoad\Controllers\Question1;
+use Stoad\Controllers\Question1Controller;
 use Rolfisub\PrintKeyValue\PrintKeyValue;
 use Stoad\Models\DataExample;
 use Stoad\Models\Q1Model;
@@ -25,7 +25,7 @@ class Q1Factory
         $pkv = new PrintKeyValue();
         $data = new DataExample();
         $model = new Q1Model($pkv, $data);
-        $controller = new Question1($model);
+        $controller = new Question1Controller($model);
         return $controller;
     }
 }

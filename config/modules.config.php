@@ -6,14 +6,14 @@
  */
 
 /**
- * List of enabled modules for this application.
+ * List of enabled modules for this stoad.
  *
- * This should be an array of module namespaces used in the application.
+ * This should be an array of module namespaces used in the stoad.
  */
 return [
     'Zend\Router',
     'Zend\Validator',
     
-    'Application',
+   // 'Application',
     'Stoad',
 ];
