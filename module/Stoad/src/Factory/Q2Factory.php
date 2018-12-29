@@ -6,9 +6,10 @@
  * and open the template in the editor.
  */
 
-namespace Stoad\Controllers;
+namespace Stoad\Factory;
 
 use Stoad\Models\Question2 as Q2Model;
+use Stoad\Controllers\Question2;
 
 /**
  * Description of Q2Factory

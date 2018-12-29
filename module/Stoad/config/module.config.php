@@ -21,6 +21,15 @@ return [
                     ],
                 ],
             ],
+            'question1' => [
+                'type' => Literal::class,
+                'options' => [
+                    'route' => '/q1',
+                    'defaults' => [
+                        'controller' => Controllers\Question1::class
+                    ]
+                ]
+            ],
             'question2' => [
                 'type' => Segment::class,
                 'options' => [
@@ -35,7 +44,8 @@ return [
     'controllers' => [
         'factories' => [
             Controllers\TestRun::class => InvokableFactory::class,
-            Controllers\Question2::class => Controllers\Q2Factory::class
+            Controllers\Question1::class => Factory\Q1Factory::class,
+            Controllers\Question2::class => Factory\Q2Factory::class
         ],
     ],
     'view_manager' => [
