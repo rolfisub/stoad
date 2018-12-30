@@ -139,16 +139,16 @@
         },
         {
             "name": "rolfisub/print-key-value",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rolfisub/print-key-values.git",
-                "reference": "7d1b5a95c11456848e84272b2e267c0b6868b7a7"
+                "reference": "818a470112b49ddf31b06e841f1090971396c146"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rolfisub/print-key-values/zipball/7d1b5a95c11456848e84272b2e267c0b6868b7a7",
-                "reference": "7d1b5a95c11456848e84272b2e267c0b6868b7a7",
+                "url": "https://api.github.com/repos/rolfisub/print-key-values/zipball/818a470112b49ddf31b06e841f1090971396c146",
+                "reference": "818a470112b49ddf31b06e841f1090971396c146",
                 "shasum": ""
             },
             "require": {
@@ -180,7 +180,7 @@
                 "stdout",
                 "var_dump"
             ],
-            "time": "2018-12-29T20:59:25+00:00"
+            "time": "2018-12-30T00:05:33+00:00"
         },
         {
             "name": "sebastian/comparator",
