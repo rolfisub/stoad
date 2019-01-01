@@ -91,17 +91,19 @@ class Question2Model
     public function sort(array $params)
     {
 
-        //validate them
+        //validate input
         $this->validateParams($params);
 
-        //gets sortInput entity
+        //create sortInput entity
         $si = $this->getSortInput($params);
 
-        //creates sort by any
+        //creates sort by any instance
         $sba = new SortByAny($si);
 
+        //gets sample data
         $data = $this->data->getData();
 
+        //execute sorting
         $result = $sba->sortByAny($data);
 
         return $result;

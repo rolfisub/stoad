@@ -1,0 +1,85 @@
+<table>
+    <thead>
+    <th><h3>Fields Available</h3></th>
+    </thead>
+    <tbody>
+    <?php
+    foreach ($fields as $field) {
+        echo "<td><label class='field-pointer'><input type='checkbox' value='$field' class='clickCheckbox'>" . $field . "</label></td><tr/>";
+    }
+    ?>
+    </tbody>
+</table>
+<div class="dropdown-custom">
+    <select class="changeDropdown">
+        <option value="asc">asc</option>
+        <option value="desc">desc</option>
+    </select>
+</div>
+<button class="btn btn-primary clickSubmit">Sort Array</button>
+<p class="errorMsg"></p>
+<pre class="loadResults"></pre>
+<script>
+    $(document).ready(function () {
+        var fields = [];
+        var order = 'asc';
+        $(".clickCheckbox").click(function (e) {
+            let field = e.target.value;
+            let index = fields.indexOf(field);
+            if (index >= 0) {
+                fields.splice(index, 1);
+            } else {
+                fields.push(field);
+            }
+        });
+
+        $(".changeDropdown").change(function (e) {
+            order = e.target.value;
+        });
+
+        $(".clickSubmit").click(function () {
+            var uri = "";
+            fields.forEach(function (f) {
+                uri += f + ",";
+            });
+            uri += order;
+            if (fields.length > 0) {
+                $.ajax({
+                    cache: false,
+                    url: "/q2rest/" + uri,
+                    success: function (d) {
+                        $(".loadResults").html(JSON.stringify(d.result, null, 2));
+                        $(".errorMsg").html("");
+                    },
+                    error: function (x) {
+                        $(".errorMsg").html(x.responseJSON.message);
+                        $(".loadResults").html("");
+                    }
+                })
+            } else {
+                $(".loadResults").html("");
+            }
+
+
+        });
+
+
+    });
+</script>
+<style>
+    .field-pointer {
+        cursor: pointer;
+    }
+
+    .dropdown-custom {
+        margin: 10px;
+    }
+
+    .loadResults {
+        margin-top: 10px;
+    }
+
+    .errorMsg {
+        color: red;
+    }
+</style>

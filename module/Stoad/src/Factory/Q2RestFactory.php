@@ -8,24 +8,23 @@
 
 namespace Stoad\Factory;
 
-use Stoad\Controllers\Question1Controller;
-use Rolfisub\PrintKeyValue\PrintKeyValue;
+use Stoad\Models\Question2Model as Q2Model;
 use Stoad\Models\DataExample;
-use Stoad\Models\Question1Model;
+use Stoad\Controllers\Question2RestController;
+
 
 /**
  * Description of Q2RestFactory
  *
  * @author rolf
  */
-class Q1Factory
+class Q2RestFactory
 {
     public function __invoke(\Interop\Container\ContainerInterface $container, $requestedName, array $options = null)
     {
-        $pkv = new PrintKeyValue();
         $data = new DataExample();
-        $model = new Question1Model($pkv, $data);
-        $controller = new Question1Controller($model);
+        $model = new Q2Model($data);
+        $controller = new Question2RestController($model);
         return $controller;
     }
 }
