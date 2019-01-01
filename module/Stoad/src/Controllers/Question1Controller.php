@@ -1,11 +1,11 @@
 <?php
 
 namespace Stoad\Controllers;
-use Stoad\Models\Q1Model;
+use Stoad\Models\Question1Model;
 use Zend\View\Model\ViewModel;
 
 /**
- * Description of Question2
+ * Description of Question2RestController
  *
  * @author rolf
  */
@@ -13,15 +13,15 @@ class Question1Controller extends \Zend\Mvc\Controller\AbstractActionController
 {
 
     /**
-     * @var Q1Model $model
+     * @var Question1Model $model
      */
     private $model;
 
     /**
      * construct controller
-     * @param Q1Model $model
+     * @param Question1Model $model
      */
-    public function __construct(Q1Model $model)
+    public function __construct(Question1Model $model)
     {
         $this->model = $model;
     }

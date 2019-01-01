@@ -34,9 +34,9 @@ return [
             'question2' => [
                 'type' => Segment::class,
                 'options' => [
-                    'route'    => '/q2[/:id]',
+                    'route'    => '/q2rest[/:id]',
                     'defaults' => [
-                        'controller' => Controllers\Question2::class,
+                        'controller' => Controllers\Question2RestController::class,
                     ],
                 ]
             ],
@@ -46,7 +46,7 @@ return [
         'factories' => [
             Controllers\TestRun::class => InvokableFactory::class,
             Controllers\Question1Controller::class => Factory\Q1Factory::class,
-            Controllers\Question2::class => Factory\Q2Factory::class
+            Controllers\Question2RestController::class => Factory\Q2Factory::class
         ],
     ],
     'view_manager' => [

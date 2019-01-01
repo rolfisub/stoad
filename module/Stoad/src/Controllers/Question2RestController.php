@@ -2,20 +2,20 @@
 
 namespace Stoad\Controllers;
 
-use Stoad\Models\Question2 as Q2Model;
+use Stoad\Models\Question2Model as Q2Model;
 use Stoad\Controllers\ControllerResponseTrait;
 
 /**
- * Description of Question2
+ * Description of Question2RestController
  *
  * @author rolf
  */
-class Question2 extends \Zend\Mvc\Controller\AbstractRestfulController
+class Question2RestController extends \Zend\Mvc\Controller\AbstractRestfulController
 {
 
     /**
      * holder for the model class
-     * @var type Q2Model
+     * @var Q2Model
      */
     private $model;
 
@@ -44,8 +44,8 @@ class Question2 extends \Zend\Mvc\Controller\AbstractRestfulController
 
     /**
      * process sort request
-     * @param type $params
-     * @return type
+     * @param string $params
+     * @return object
      */
     public function get($params)
     {

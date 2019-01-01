@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "58a441d087bdd927b7655171c4a9750e",
+    "content-hash": "18b92d65d658ae859c417397fe25334d",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -136,6 +136,96 @@
                 "psr"
             ],
             "time": "2017-02-14T16:28:37+00:00"
+        },
+        {
+            "name": "rolfisub/php-array-flatten",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rolfisub/php-array-flatten.git",
+                "reference": "55e2bee57ded8e74058a030710f12e49b074aeba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rolfisub/php-array-flatten/zipball/55e2bee57ded8e74058a030710f12e49b074aeba",
+                "reference": "55e2bee57ded8e74058a030710f12e49b074aeba",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "6.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rolfisub\\ArrayFlatten\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rolf Bansbach",
+                    "email": "rolfisub@gmail.com"
+                }
+            ],
+            "description": "Gets an array and flattens each element.",
+            "keywords": [
+                "array",
+                "flatten"
+            ],
+            "time": "2018-12-31T06:03:27+00:00"
+        },
+        {
+            "name": "rolfisub/php-sort-by-any",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rolfisub/php-sort-by-any.git",
+                "reference": "dd2a5fb9011b27e1dccb974a3f90e618cf0c5a9a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rolfisub/php-sort-by-any/zipball/dd2a5fb9011b27e1dccb974a3f90e618cf0c5a9a",
+                "reference": "dd2a5fb9011b27e1dccb974a3f90e618cf0c5a9a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1",
+                "rolfisub/php-array-flatten": "^0.0.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "6.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rolfisub\\SortByAny\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rolf Bansbach",
+                    "email": "rolfisub@gmail.com"
+                }
+            ],
+            "description": "Sort an array by any field, regardless of where in the structure it is.",
+            "keywords": [
+                "composer",
+                "data structure",
+                "multi level",
+                "package",
+                "sort"
+            ],
+            "time": "2019-01-01T04:31:49+00:00"
         },
         {
             "name": "rolfisub/print-key-value",

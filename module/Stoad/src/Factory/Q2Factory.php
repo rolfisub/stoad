@@ -8,8 +8,10 @@
 
 namespace Stoad\Factory;
 
-use Stoad\Models\Question2 as Q2Model;
-use Stoad\Controllers\Question2;
+use Stoad\Models\Question2Model as Q2Model;
+use Stoad\Models\DataExample;
+use Stoad\Controllers\Question2RestController;
+
 
 /**
  * Description of Q2Factory
@@ -20,8 +22,9 @@ class Q2Factory
 {
     public function __invoke(\Interop\Container\ContainerInterface $container, $requestedName, array $options = null)
     {
-        $model = new Q2Model();
-        $controller = new Question2($model);
+        $data = new DataExample();
+        $model = new Q2Model($data);
+        $controller = new Question2RestController($model);
         return $controller;
     }
 }

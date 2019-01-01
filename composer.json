@@ -18,7 +18,9 @@
         "zfcampus/zf-development-mode": "^3.0",
         "zendframework/zend-json": "^3.1",
         "lodash-php/lodash-php": "^0.0.5",
-        "rolfisub/print-key-value": "^1.0"
+        "rolfisub/print-key-value": "^1.0",
+        "rolfisub/php-sort-by-any": "^0.0.1",
+        "rolfisub/php-array-flatten": "^0.0.1"
     },
     "autoload": {
         "psr-4": {

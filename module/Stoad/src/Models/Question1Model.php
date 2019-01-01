@@ -10,7 +10,7 @@ namespace Stoad\Models;
 
 use Rolfisub\PrintKeyValue\PrintKeyValue;
 
-class Q1Model
+class Question1Model
 {
     private $pkv;
     private $data;
