@@ -3,7 +3,6 @@
 namespace Stoad\Controllers;
 
 use Stoad\Models\Question2Model as Q2Model;
-use Stoad\Controllers\ControllerResponseTrait;
 
 /**
  * Description of Question2RestController
